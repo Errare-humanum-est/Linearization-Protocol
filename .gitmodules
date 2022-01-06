@@ -1,0 +1,6 @@
+[submodule "CMurphi"]
+	path = CMurphi
+	url = git@github.com:Errare-humanum-est/CMurphi.git
+[submodule "ccKVS"]
+	path = ccKVS
+	url = git@github.com:icsa-caps/ccKVS.git

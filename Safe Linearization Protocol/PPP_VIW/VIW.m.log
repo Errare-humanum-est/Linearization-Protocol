@@ -1,0 +1,83 @@
+
+Number of $MessageType declarations found: 3
+MessageType(s) 
+Inv
+Inv_Ack
+Update
+
+
+### CacheStates ###
+Number of $CacheStates declarations found: 3
+CacheStates(s) 
+C_IU
+C_V
+C_WA
+
+
+State Lines 
+[250, 'C_IU']
+[269, 'C_V']
+[281, 'C_WA']
+[336, 'END']
+
+ 
+Total number of state transitions: 11
+State Transition Table 
+[252, 'C_IU', '-', 'Update', '-', '-', 'C_V', [252, 256, [0], [0], '-']]
+[256, 'C_IU', '-', 'Inv', 'Inv_Ack', '-', 'C_IU', [256, 260, [0], [0], '-']]
+[260, 'C_IU', '-', 'Inv_Ack', '-', '-', 'C_IU', [260, 269, [0], [0], '-']]
+[271, 'C_V', '-', 'Inv', 'Inv_Ack', '-', 'C_IU', [271, 281, [0], [0], '-']]
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and  (ps.TS<VALUE_COUNT)', 'C_V', [283, 312, [0, 293], [0, 295], ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and  (ps.TS<VALUE_COUNT)']]
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and !{ (ps.TS<VALUE_COUNT)}', 'C_V', [283, 312, [0, 291], [0, 293], ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and !{ (ps.TS<VALUE_COUNT)}']]
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and !{ (ps.inv_ack=PROC_COUNT-1)}', 'C_WA', [283, 312, [0, 288], [0, 309], ' (msg.TS=ps.TS) and !{ (ps.inv_ack=PROC_COUNT-1)}']]
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' !{ (msg.TS=ps.TS)}', 'C_WA', [283, 312, [286], [310], ' !{ (msg.TS=ps.TS)}']]
+[312, 'C_WA', '-', 'Inv', 'Inv_Ack', ' (ps.id<msg.id)', 'C_IU', [312, 319, [0], [0], ' (ps.id<msg.id)']]
+[312, 'C_WA', '-', 'Inv', '-', ' !{ (ps.id<msg.id)}', 'C_WA', [312, 319, [313], [317], ' !{ (ps.id<msg.id)}']]
+[319, 'C_WA', '-', 'Update', '-', '-', 'C_WA', [319, 336, [0], [0], '-']]
+
+ 
+Total number of cpu actions: 1
+CPU Transition Table 
+[350, 'C_V', 'I.Write', '-', '-', '-', 'C_WA', [350, 356, [0], [0], '-']]
+
+***Graph State Transition Table*** 
+[350, 'C_V', 'I.Write', '-', '-', '-', 'C_WA', [350, 356, [0], [0], '-']] 
+
+***Graph State Transition Table*** 
+[252, 'C_IU', '-', 'Update', '-', '-', 'C_V', [252, 256, [0], [0], '-']] 
+[256, 'C_IU', '-', 'Inv', 'Inv_Ack', '-', 'C_IU', [256, 260, [0], [0], '-']] 
+[260, 'C_IU', '-', 'Inv_Ack', '-', '-', 'C_IU', [260, 269, [0], [0], '-']] 
+[271, 'C_V', '-', 'Inv', 'Inv_Ack', '-', 'C_IU', [271, 281, [0], [0], '-']] 
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and  (ps.TS<VALUE_COUNT)', 'C_V', [283, 312, [0, 293], [0, 295], ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and  (ps.TS<VALUE_COUNT)']] 
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and !{ (ps.TS<VALUE_COUNT)}', 'C_V', [283, 312, [0, 291], [0, 293], ' (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and !{ (ps.TS<VALUE_COUNT)}']] 
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' (msg.TS=ps.TS) and !{ (ps.inv_ack=PROC_COUNT-1)}', 'C_WA', [283, 312, [0, 288], [0, 309], ' (msg.TS=ps.TS) and !{ (ps.inv_ack=PROC_COUNT-1)}']] 
+[283, 'C_WA', '-', 'Inv_Ack', '-', ' !{ (msg.TS=ps.TS)}', 'C_WA', [283, 312, [286], [310], ' !{ (msg.TS=ps.TS)}']] 
+[312, 'C_WA', '-', 'Inv', 'Inv_Ack', ' (ps.id<msg.id)', 'C_IU', [312, 319, [0], [0], ' (ps.id<msg.id)']] 
+[312, 'C_WA', '-', 'Inv', '-', ' !{ (ps.id<msg.id)}', 'C_WA', [312, 319, [313], [317], ' !{ (ps.id<msg.id)}']] 
+[319, 'C_WA', '-', 'Update', '-', '-', 'C_WA', [319, 336, [0], [0], '-']] 
+
+***Graph Source*** 
+digraph CacheStates {
+	splines=true
+	rankdir=LR
+	nodesep=0.1 ranksep=0.3
+	ratio=0.2
+	fontsize=15 label=CacheStates
+	C_V [label=C_V fontsize=12 rank=same shape=ellipse width=1]
+	C_IU [label=C_IU fontsize=12 rank=same shape=ellipse width=1]
+	C_WA [label=C_WA fontsize=12 rank=same shape=ellipse width=1]
+		C_V -> C_WA [label="I.Write/-/-/-" fontcolor=red fontsize=10]
+		C_IU -> C_V [label="-/Update/-/-" fontcolor=blue fontsize=10]
+		C_IU -> C_IU [label="-/Inv/Inv_Ack/-" constraint=false fontcolor=blue fontsize=8]
+		C_V -> C_IU [label="-/Inv/Inv_Ack/-" fontcolor=blue fontsize=10]
+		C_WA -> C_V [label="-/Inv_Ack/-/ (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and  (ps.TS<VALUE_COUNT)" fontcolor=blue fontsize=10]
+		C_WA -> C_V [label="-/Inv_Ack/-/ (msg.TS=ps.TS) and  (ps.inv_ack=PROC_COUNT-1) and !{ (ps.TS<VALUE_COUNT)}" fontcolor=blue fontsize=10]
+		C_WA -> C_WA [label="-/Inv_Ack/-/ (msg.TS=ps.TS) and !{ (ps.inv_ack=PROC_COUNT-1)}" constraint=false fontcolor=blue fontsize=8]
+		C_WA -> C_WA [label="-/Inv_Ack/-/ !{ (msg.TS=ps.TS)}" constraint=false fontcolor=blue fontsize=8]
+		C_WA -> C_IU [label="-/Inv/Inv_Ack/ (ps.id<msg.id)" fontcolor=blue fontsize=10]
+		C_WA -> C_WA [label="-/Inv/-/ !{ (ps.id<msg.id)}" constraint=false fontcolor=blue fontsize=8]
+}
+
+
+
+PROGRAM END 

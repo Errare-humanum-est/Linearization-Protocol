@@ -1,0 +1,271 @@
+seqdiag {
+activation = none;
+
+=== Startstate Startstate 0 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V
+Cid: 1
+TS: 1
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_2 -> L1Cache_2[ leftnote="C_V
+Cid: 2
+TS: 1
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_3 -> L1Cache_3[ leftnote="C_V
+Cid: 3
+TS: 1
+Rid: 3
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule I.Write, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Inv / TS=2 / mid=1" , color="red" , leftnote="C_W_A
+Cid: 1
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_1 -> L1Cache_3[ label="Inv / TS=2 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Inv_Ack / TS=2 / mid=1" , color="blue" , rightnote="C_I_U
+Cid: 2
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_1[ label="Inv_Ack / TS=2 / mid=1" , color="blue" , rightnote="C_I_U
+Cid: 3
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_W_A
+Cid: 1
+TS: 2
+Rid: 1
+Inv_ack: 1
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:1, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Update / TS=2 / mid=1" , color="red" , leftnote="C_V_A
+Cid: 1
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_1 -> L1Cache_3[ label="Update / TS=2 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Update_Ack / TS=2 / mid=1" , color="blue" , rightnote="C_V
+Cid: 2
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_1[ label="Update_Ack / TS=2 / mid=1" , color="blue" , rightnote="C_V
+Cid: 3
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V_A
+Cid: 1
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 1" ];
+=== Rule Receive unordered, midx:1, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V
+Cid: 1
+TS: 2
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule I.Write, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Inv / TS=3 / mid=2" , color="red" , rightnote="C_W_A
+Cid: 2
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_2 -> L1Cache_3[ label="Inv / TS=3 / mid=2" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_2[ label="Inv_Ack / TS=3 / mid=2" , color="blue" , rightnote="C_I_U
+Cid: 3
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_2[ leftnote="C_W_A
+Cid: 2
+TS: 3
+Rid: 2
+Inv_ack: 1
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Inv_Ack / TS=3 / mid=2" , color="blue" , leftnote="C_I_U
+Cid: 1
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Update / TS=3 / mid=2" , color="red" , rightnote="C_V_A
+Cid: 2
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_2 -> L1Cache_3[ label="Update / TS=3 / mid=2" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Update_Ack / TS=3 / mid=2" , color="blue" , leftnote="C_V
+Cid: 1
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_2[ label="Update_Ack / TS=3 / mid=2" , color="blue" , rightnote="C_V
+Cid: 3
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_2[ leftnote="C_V_A
+Cid: 2
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 1" ];
+=== Rule Receive unordered, midx:1, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_2[ leftnote="C_V
+Cid: 2
+TS: 3
+Rid: 2
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule I.Write, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Inv / TS=4 / mid=1" , color="red" , leftnote="C_W_A
+Cid: 1
+TS: 4
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_1 -> L1Cache_3[ label="Inv / TS=4 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_1[ label="Inv_Ack / TS=4 / mid=1" , color="blue" , rightnote="C_I_U
+Cid: 3
+TS: 4
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_W_A
+Cid: 1
+TS: 4
+Rid: 1
+Inv_ack: 1
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Inv_Ack / TS=4 / mid=1" , color="blue" , rightnote="C_I_U
+Cid: 2
+TS: 4
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Update / TS=4 / mid=1" , color="red" , leftnote="C_V_A_A
+Cid: 1
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_1 -> L1Cache_3[ label="Update / TS=4 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Update_Ack / TS=4 / mid=1" , color="blue" , rightnote="C_U_A
+Cid: 2
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_1[ label="Update_Ack / TS=4 / mid=1" , color="blue" , rightnote="C_U_A
+Cid: 3
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V_A_A
+Cid: 1
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 1" ];
+=== Rule Receive unordered, midx:1, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Wrap / TS=0 / mid=1" , color="red" , leftnote="C_V_W_A
+Cid: 1
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_1 -> L1Cache_3[ label="Wrap / TS=0 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_2 -> L1Cache_1[ label="Wrap_Ack / TS=0 / mid=1" , color="blue" , rightnote="C_U_W
+Cid: 2
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_3 fired. ===
+L1Cache_3 -> L1Cache_1[ label="Wrap_Ack / TS=0 / mid=1" , color="blue" , rightnote="C_U_W
+Cid: 3
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V_W_A
+Cid: 1
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 1" ];
+=== Rule Receive unordered, midx:1, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_1[ leftnote="C_V
+Cid: 1
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+=== Rule I.Write, n:L1Cache_1 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Inv / TS=1 / mid=1" , color="red" ];
+L1Cache_1 -> L1Cache_3[ label="Inv / TS=1 / mid=1" , color="red" ];
+=== Rule Receive unordered, midx:0, n:L1Cache_2 fired. ===
+L1Cache_1 -> L1Cache_2[ label="Inv / TS=1 / mid=1" , color="red" ];
+L1Cache_1 -> L1Cache_3[ label="Inv / TS=1 / mid=1" , color="red" ];
+L1Cache_1 -> L1Cache_1[ leftnote="C_W_A
+Cid: 1
+TS: 1
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_2 -> L1Cache_2[ leftnote="C_U_W
+Cid: 2
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+L1Cache_3 -> L1Cache_3[ leftnote="C_U_W
+Cid: 3
+TS: 0
+Rid: 1
+Inv_ack: 0
+Upd_ack: 0" ];
+}
